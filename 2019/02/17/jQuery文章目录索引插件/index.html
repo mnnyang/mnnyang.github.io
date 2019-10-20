@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="jQuery文章目录索引插件"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="xxyangyoulin">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yangyoulin.com/2019/02/17/jQuery文章目录索引插件/"/>
+
+
+<meta name="description" content="jQuery插件，自动生成文章目录索引，手风琴式折叠显示，自动定位当前位置。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery文章目录索引插件">
+<meta property="og:url" content="http:&#x2F;&#x2F;yangyoulin.com&#x2F;2019&#x2F;02&#x2F;17&#x2F;jQuery%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E6%8F%92%E4%BB%B6&#x2F;index.html">
+<meta property="og:site_name" content="xxyangyoulin">
+<meta property="og:description" content="jQuery插件，自动生成文章目录索引，手风琴式折叠显示，自动定位当前位置。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yangyoulin.com&#x2F;2019&#x2F;02&#x2F;17&#x2F;jQuery%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E6%8F%92%E4%BB%B6&#x2F;headindex.png">
+<meta property="og:updated_time" content="2019-10-20T13:44:58.400Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yangyoulin.com&#x2F;2019&#x2F;02&#x2F;17&#x2F;jQuery%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E6%8F%92%E4%BB%B6&#x2F;headindex.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> jQuery文章目录索引插件 - xxyangyoulin </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">xxyangyoulin</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                联系
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post ">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          jQuery文章目录索引插件
+        
+      </h1>
+
+      <time class="post-time">
+          Feb 17 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>jQuery插件，自动生成文章目录索引，手风琴式折叠显示，自动定位当前位置。</p>
+<p><img src="/2019/02/17/jQuery%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E7%B4%A2%E5%BC%95%E6%8F%92%E4%BB%B6/headindex.png" alt="headindex.png"></p>
+<a id="more"></a>
+
+<p>二分法查找，应对目录量比较大的问题，比如做笔记的时候，一篇文章的目录可能会出现上百个的情况。</p>
+<p><a href="https://github.com/mnnyang/jquery_headindex" target="_blank" rel="noopener" title="项目地址">项目地址</a><br><a href="https://mnnyang.github.io/jquery_headindex/test" target="_blank" rel="noopener">查看演示</a></p>
+<h2 id="怎么使用？"><a href="#怎么使用？" class="headerlink" title="怎么使用？"></a>怎么使用？</h2><p>step 1. 导入<code>jquery</code>和<code>jquery.headindex</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"./js/jquery.3.3.1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"../jquery.headindex.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>setp2. </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">'.article-wrap'</span>).headIndex(&#123;</span><br><span class="line">        articleWrapSelector: <span class="string">'.article-content'</span>,<span class="comment">//包裹文章的元素的选择器</span></span><br><span class="line">        indexBoxSelector: <span class="string">'.index-box'</span>,<span class="comment">//用来放目录索引的元素的选择器</span></span><br><span class="line">        <span class="comment">//other options</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>默认参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">defaultOptions = &#123;</span><br><span class="line">        articleWrapSelector: <span class="string">".article-wrap"</span>,<span class="comment">/*包裹文章的选择器*/</span></span><br><span class="line">        indexBoxSelector: <span class="string">".index-box"</span>,<span class="comment">/*包裹目录索引的选择器*/</span></span><br><span class="line">        scrollSelector: <span class="string">'body,html'</span>,<span class="comment">/*滑动元素的选择器*/</span></span><br><span class="line">        scrollWrap: <span class="built_in">window</span>,<span class="comment">/*能够监听到scrollSelector滑动的选择器*/</span></span><br><span class="line"></span><br><span class="line">        subItemBoxClass: <span class="string">"index-subItem-box"</span>,</span><br><span class="line">        itemClass: <span class="string">"index-item"</span>,</span><br><span class="line">        linkClass: <span class="string">"index-link"</span>,</span><br><span class="line">        offset: <span class="number">0</span>,<span class="comment">/*滑动偏移量 按需求进行偏移*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>某些布局下，滚动时位置不准确的问题<br>这个需要自己手动适配一下，重写方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">offsetTop: <span class="function"><span class="keyword">function</span> (<span class="params">elem</span>) </span>&#123;</span><br></pre></td></tr></table></figure>
+<p>届时，<code>offset</code>可能失效。</p>
+<p>如果对您有帮助，欢迎给个star。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/02/19/%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">自私的基因</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/10/29/%E8%BF%87%E4%BA%86%E5%8D%81%E6%9C%88/">
+        <span class="next-text nav-default">过了十月</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2019
+    <span class="footer-author">xxyangyoulin.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

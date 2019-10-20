@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Linux挂起后被鼠标唤醒"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="xxyangyoulin">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yangyoulin.com/2019/10/20/Linux挂起后被鼠标唤醒/"/>
+
+
+<meta name="description" content="用了四年的笔记本电池报废了，最近刚换了一块电池。为了延长电池使用寿命，我开启了Linux的自动挂起功能。但是系统挂起之后，无意间触碰到鼠标会导致系统意外唤醒，这真要命！ 解决方法：修改&#x2F;proc&#x2F;acpi&#x2F;wakeup文件，将XHC、EHC1、EHC2USB相关的项目设置为disabled状态。需要su权限。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux挂起后被鼠标唤醒">
+<meta property="og:url" content="http:&#x2F;&#x2F;yangyoulin.com&#x2F;2019&#x2F;10&#x2F;20&#x2F;Linux%E6%8C%82%E8%B5%B7%E5%90%8E%E8%A2%AB%E9%BC%A0%E6%A0%87%E5%94%A4%E9%86%92&#x2F;index.html">
+<meta property="og:site_name" content="xxyangyoulin">
+<meta property="og:description" content="用了四年的笔记本电池报废了，最近刚换了一块电池。为了延长电池使用寿命，我开启了Linux的自动挂起功能。但是系统挂起之后，无意间触碰到鼠标会导致系统意外唤醒，这真要命！ 解决方法：修改&#x2F;proc&#x2F;acpi&#x2F;wakeup文件，将XHC、EHC1、EHC2USB相关的项目设置为disabled状态。需要su权限。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yangyoulin.com&#x2F;2019&#x2F;10&#x2F;20&#x2F;Linux%E6%8C%82%E8%B5%B7%E5%90%8E%E8%A2%AB%E9%BC%A0%E6%A0%87%E5%94%A4%E9%86%92&#x2F;Linux-wakeup.png">
+<meta property="og:updated_time" content="2019-10-20T13:37:34.520Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yangyoulin.com&#x2F;2019&#x2F;10&#x2F;20&#x2F;Linux%E6%8C%82%E8%B5%B7%E5%90%8E%E8%A2%AB%E9%BC%A0%E6%A0%87%E5%94%A4%E9%86%92&#x2F;Linux-wakeup.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> Linux挂起后被鼠标唤醒 - xxyangyoulin </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">xxyangyoulin</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                联系
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post ">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Linux挂起后被鼠标唤醒
+        
+      </h1>
+
+      <time class="post-time">
+          Oct 20 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>用了四年的笔记本电池报废了，最近刚换了一块电池。为了延长电池使用寿命，我开启了Linux的自动挂起功能。<br>但是系统挂起之后，无意间触碰到鼠标会导致系统意外唤醒，这真要命！</p>
+<p>解决方法：<br>修改<code>/proc/acpi/wakeup</code>文件，将<code>XHC</code>、<code>EHC1</code>、<code>EHC2</code>USB相关的项目设置为<code>disabled</code>状态。<br>需要su权限。<br><img src="/2019/10/20/Linux%E6%8C%82%E8%B5%B7%E5%90%8E%E8%A2%AB%E9%BC%A0%E6%A0%87%E5%94%A4%E9%86%92/Linux-wakeup.png" alt="Linux-wakeup.png"></p>
+<a id="more"></a>
+<p>关于其中Device符号的解答，来自<a href="https://unix.stackexchange.com/questions/236127/acpi-wakeup-4-letters-code-meaning" target="_blank" rel="noopener" title="stackexchange">stackexchange</a></p>
+<blockquote>
+<p>PS2K: PS/2 keyboard<br>PS2M: PS/2 mouse<br>PWRB or PBTN: Power button<br>LID: Laptop lid<br>RP0x or EXPx: PCIE slot #x (aka PCI Express Root Port #x)<br>EHCx or USBx: USB 2.0 (EHCI) chip<br>XHC: USB 3.0 (XHCI) chip<br>PEGx: PCI Express for Graphics slot #x<br>GLAN: Gigabit Ethernet</p>
+</blockquote>
+<blockquote>
+<p>HDEF most probably means “High definition”, so it’s likely to be the integrated audio device and IGBE could stand for “Intel Gigabit Ethernet” or “Integrated Gigabit Ethernet”, so it should be the Ethernet LAN controller..</p>
+</blockquote>
+<p>无法直接编辑<code>/proc/acpi/wakeup</code>的问题，请使用以下方式进行修改状态：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 'XHC' &gt;  /proc/acpi/wakeup</span><br></pre></td></tr></table></figure>
+<p>但是这种方式会再重启之后失效，需建立一个开机执行的脚本。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> @Author: lance </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> @Date:   2015-10-07 22:38:51</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> @Last Modified by:   lance</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> @Last Modified time: 2015-10-07 22:42:21</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Some events will wakeup right after <span class="built_in">suspend</span>, <span class="built_in">disable</span> them</span></span><br><span class="line">stat=$(cat /proc/acpi/wakeup)</span><br><span class="line">wakers=(IGBE EXP2 XHCI EHC1)</span><br><span class="line">for waker in $&#123;wakers[@]&#125;; do</span><br><span class="line">    is_en=$(echo "$&#123;stat&#125;" | grep $waker | grep disabled);</span><br><span class="line">    if  [ -z "$is_en" ]; then</span><br><span class="line">        echo disable wakeup of $waker...</span><br><span class="line">        echo $waker | tee /proc/acpi/wakeup;</span><br><span class="line">    fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://unix.stackexchange.com/questions/236127/acpi-wakeup-4-letters-code-meaning" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/236127/acpi-wakeup-4-letters-code-meaning</a><br><a href="http://ju.outofmemory.cn/entry/336106" target="_blank" rel="noopener">http://ju.outofmemory.cn/entry/336106</a></p>
+</blockquote>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/07/05/typecho%E4%B8%BB%E9%A2%98%EF%BC%9AMy-Material/">
+        <span class="next-text nav-default">typecho主题：My Material</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2019
+    <span class="footer-author">xxyangyoulin.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
