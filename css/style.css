@@ -4,6 +4,9 @@
 .post-footer {
   border-width: 0 !important; }
 
+.post {
+  font-size: 19px; }
+
 .home-post {
   padding: 15px 0 !important; }
   .home-post .post-time {
